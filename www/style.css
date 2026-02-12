@@ -1,10 +1,26 @@
 
-body{
-    background-color: black;
-    overflow-y:hidden;
-    overflow-x:hidden;
-
+body {
+    background: #000814;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000814; /* your dark background */
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+
+
+
+
+
 .square{
     position: relative;
     width:400px;
@@ -27,6 +43,12 @@ body{
     animation:animate1 6s linear infinite;
 
 }
+
+h5 {
+    font-family: 'Audiowide', cursive;
+    color:#bdefff
+}
+
 .square span:nth-child(2){
     position: absolute;
     top:0;
@@ -78,36 +100,33 @@ body{
     }
 }     
 #TextInput {
-    background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-    border: 2px solid #002bff;
-    border-radius: 50px;
+  
+    background: rgba(20, 20, 35, 0.8);
+    border: 0.5px solid rgb(21, 0, 255);
+    border-radius: 100px;
     box-shadow: 
-        0 0 20px #002bff,
-        inset 0 0 10px #0011aa;
+        0 0 10px rgb(30, 0, 255),
+        inset 0 0 30px rgba(13, 16, 26, 0.4);
     padding: 10px 25px;
     margin: 0px 20%;
-    transition: 
-        box-shadow 0.6s ease-in-out,
-        border-color 0.6s ease-in-out,
-        transform 0.4s ease;
+    transition: all 0.5s ease;
 }
-#TextInput:focus {
-    border-color: #ff00c8;
-    box-shadow: 
-        0 0 20px #ff00c8,
-        inset 0 0 10px #ff00c8; 
-    transform: scale(1.05); 
-        
-} 
+
+
  .input-field {
     flex: 1;
     background: transparent;
     border: none;
     outline: none;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 10px;
     letter-spacing: 1px;
+    font-family: 'poppins', sans-serif;
+     position: relative;
+  z-index: 10;
+    
+
 }
 
 .glow-on-hover{
@@ -201,5 +220,15 @@ body{
 #TextInput:focus-within {
     animation: softPulse 2.5s infinite ease-in-out;
 }
+
+#siri-container {
+    width: 800px;
+    height: 200px;
+    position: relative
+    
+   
+}
+
+
 
 

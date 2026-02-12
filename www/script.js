@@ -64,6 +64,17 @@ function canvasApp() {
 	var x0, y0, z0;
 
 	init();
+	window.addEventListener("resize", function () {
+    theCanvas.width = window.innerWidth;
+    theCanvas.height = window.innerHeight;
+
+    displayWidth = theCanvas.width;
+    displayHeight = theCanvas.height;
+
+    projCenterX = displayWidth / 2;
+    projCenterY = displayHeight /2-80;
+});
+
 
 	// eel.expose(init)
 	function init() {
@@ -79,14 +90,18 @@ function canvasApp() {
 		rgbString = "rgba(" + r + "," + g + "," + b + ","; //partial string for color which will be completed by appending alpha value.
 		particleAlpha = 1; //maximum alpha
 
-		displayWidth = theCanvas.width;
-		displayHeight = theCanvas.height;
+		theCanvas.width = window.innerWidth;
+        theCanvas.height = window.innerHeight;
+
+        displayWidth = theCanvas.width;
+        displayHeight = theCanvas.height;
+
 
 		fLen = 320; //represents the distance from the viewer to z=0 depth.
 
 		//projection center coordinates sets location of origin
 		projCenterX = displayWidth / 2;
-		projCenterY = displayHeight / 2;
+		projCenterY = displayHeight /2-70;
 
 		//we will not draw coordinates if they have too large of a z-coordinate (which means they are very close to the observer).
 		zMax = fLen - 2;
@@ -157,8 +172,8 @@ function canvasApp() {
 		cosAngle = Math.cos(turnAngle);
 
 		//background fill
-		context.fillStyle = "#000000";
-		context.fillRect(0, 0, displayWidth, displayHeight);
+		context.clearRect(0, 0, displayWidth, displayHeight);
+
 
 		//update and draw particles
 		p = particleList.first;
